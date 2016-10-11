@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Register extends HttpServlet {
 
@@ -51,6 +52,11 @@ public class Register extends HttpServlet {
 			ofy.save().entity(user).now();
 			System.out.println(rname + rpassword);
 			out.println("registration Succesfull");
+			HttpSession session = req.getSession(true);
+			System.out.println(session.getId());
+			session.setAttribute("name", rname);
+			session.setMaxInactiveInterval(5 * 60);
+			
 		} else {
 			out.println("User ALready Exists");
 		}

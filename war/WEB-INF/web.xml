@@ -12,9 +12,17 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>register</servlet-name>
 		<servlet-class>com.app.Register</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>LoginValidation</servlet-name>
+		<servlet-class>com.app.LoginValidation</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>AuthSystem</servlet-name>
 		<url-pattern>/authsystem</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginValidation</servlet-name>
+		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>register</servlet-name>
